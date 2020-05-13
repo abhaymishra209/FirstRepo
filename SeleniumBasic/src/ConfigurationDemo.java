@@ -23,14 +23,12 @@ class ConfigurationDemo {
 	static String url = "http://the-internet.herokuapp.com/";
 	static String expectedTitle="The Internet";
 	
-
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		System.out.println("BeforeAll");
 		//System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 		//driver = new ChromeDriver();
-		
-		
+				
 		if(browser.equalsIgnoreCase("firefox")){
 			System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
 			driver = new FirefoxDriver();
@@ -48,8 +46,9 @@ class ConfigurationDemo {
 		}		
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
 		driver.get(url);
-
 	}
 
 	@AfterAll
@@ -77,7 +76,7 @@ class ConfigurationDemo {
 		System.out.println(actualTitle);
 		
 		Assert.assertEquals(expectedTitle, actualTitle);
-		//System.out.println("test fail");
+		System.out.println("test1 pass");
 		
 	}
 	@Test
