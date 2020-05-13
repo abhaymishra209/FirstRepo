@@ -36,7 +36,7 @@ public class TestWebTable {
 						.getText() + "   ");
 			}
 
-			System.out.println();
+			System.out.println("test");
 		}
 
 		driver.close();
