@@ -10,27 +10,24 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
 
 class simpleWebInteractionsDemo {
 
 	static WebDriver driver;
+	static String driverPath="S:/Software/Automation/";
 	static String url = "http://the-internet.herokuapp.com/";
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "S:/Software/Automation/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
 		Thread.sleep(2000);
 	}
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		driver.close();
-	}
-
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		driver.navigate().to(url);
@@ -57,5 +54,11 @@ class simpleWebInteractionsDemo {
 		//select.deselectAll();
 		Thread.sleep(5000);		
 	}
+	
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+		driver.close();
+	}
+	
 
 }

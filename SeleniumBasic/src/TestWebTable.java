@@ -5,14 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class TestWebTable {
 
 	static WebDriver driver;
+	static String driverPath="S:/Software/Automation/";
 
 	public static void main(String[] args) {
 		//
-		System.setProperty("webdriver.chrome.driver", "S:/Software/Automation/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 		driver = new ChromeDriver();
 
 		driver.get("https://money.rediff.com/gainers/bsc/daily/groupa");

@@ -22,13 +22,13 @@ class ConfigurationDemo {
 	static String driverPath="S:/Software/Automation/";
 	static String url = "http://the-internet.herokuapp.com/";
 	static String expectedTitle="The Internet";
-	
+	//http://dl.bintray.com/testng-team/testng-eclipse-release/  to install TestNG on Eclipse 2020
+		
+		
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		System.out.println("BeforeAll");
-		//System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
-		//driver = new ChromeDriver();
-				
+						
 		if(browser.equalsIgnoreCase("firefox")){
 			System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
 			driver = new FirefoxDriver();
